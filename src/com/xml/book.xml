@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<booklist>
+<book kind = "컴퓨터">
+ <title>자바가 뭔가요?</title>
+ <author>나자바</author>
+ <price>3000</price>
+</book>
+<book kind ="소설">
+<title>수지의 하루</title>
+<author>김수지</author>
+<price>5000</price>
+</book>
+
+</booklist>

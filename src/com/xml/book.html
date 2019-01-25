@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+	xmlDoc.load("book.xml");
+
+	function printNodeItem() {
+
+		//alert("aa")
+
+		//var root = xmlDoc.getElementsByTagName("booklist")[0];
+		var root = xmlDoc.documentElement;
+		var books = root.getElementsByTagName("book");
+
+		var out = "";
+
+		for (var i = 0; i < books.length; i++) {
+
+			//var book = books[i];
+			out += "\n분류:"
+					+ books[i].getAttribute("kind")
+					+ ",제목:"
+					+ books[i].getElementsByTagName("title")[0].firstChild.nodeValue
+
+					+ ",저자:"
+					+ books[i].getElementsByTagName("author")[0].firstChild.nodeValue
+
+					+ ",가격:"
+					+ books[i].getElementsByTagName("price")[0].firstChild.nodeValue
+
+		}
+
+		alert(out)
+	}
+	function insert() {//html에 데이터를 넣을 수도 있다.
+
+		var root = xmlDoc.documentElement;
+		var book = root.getElementsByTagName("book")[0];
+		book.setAttribute("year", "2018");
+
+		var node = xmlDoc.createElement("출판사");
+		var text = xmlDoc.createTextNode("우리출판사");
+		book.appendChild(node);
+		node.appendChild(text);
+
+		alert(xmlDoc.xml);
+
+	}
+
+	function remove() {
+
+		var root = xmlDoc.documentElement;
+		
+		for(var i =0;i<root.childNodes.length;i++){
+			
+			var book = root.getElementsByTagName("book")[i];
+			book.removeAttribute("kind");	
+				
+				
+				
+			}
+			alert(xmlDoc.xml);
+			
+		}
+
+		
+		
+		
+		
+		
+		
+	
+</script>
+
+
+</head>
+<body>
+	<input type="button" value="노드출력" onclick="printNodeItem();" />
+	<br />
+
+	<input type="button" value="추가" onclick="insert();" />
+	<br />
+
+	<input type="button" value="삭제" onclick="remove();" />
+	<br />
+
+</body>
+</html>

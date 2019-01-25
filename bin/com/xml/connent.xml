@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lists>
+	<total>4</total>
+	<comnent num="4">
+		<name> 이순신</name>
+		<job>장군</job>
+		<birth>1545-4-18</birth>
+	</comnent>
+	
+	<comnent num="3">
+		<name> 허준</name>
+		<job>의사</job>
+		<birth>1945-5-20</birth>
+	</comnent>
+	
+	<comnent num="2">
+		<name> 홍길동</name>
+		<job>산적</job>
+		<birth>1325-4-12</birth>
+	</comnent>
+	
+	<comnent num="1">
+		<name> 옥주현</name>
+		<job>가수</job>
+		<birth>1980-5-18</birth>
+	</comnent>
+</lists>
