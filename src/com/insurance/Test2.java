@@ -8,8 +8,6 @@ public class Test2 {
 
 		Scanner sc = new Scanner(System.in);
 		int[] lotto = new int[6];
-		int k = 0;
-
 		boolean endgame = false;
 
 		System.out.println("게임수를 결정해주세요");
@@ -18,19 +16,17 @@ public class Test2 {
 		// 번호생성
 		while (!endgame) {
 			m++;
-			k=0;
 			for (int i = 0; i < lotto.length; i++) {
-				k++;
 				lotto[i] = (int)(Math.random()*45 + 1);
-				if (k==6) {
-					break;
-				}
 				//중복제거
 				for (int j = 0; j < i; j++) {
 					if (lotto[i] == lotto[j]) {
 						i--;
 						break;
 					}
+				}
+				if (i==5) {
+					break;
 				}
 			}
 				System.out.println(m+"번째 게임");	
